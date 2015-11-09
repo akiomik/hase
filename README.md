@@ -14,20 +14,22 @@ At first, please download [Senna](http://ronan.collobert.com/senna) and
 extract the Senna source files into `foreign/senna/`. The `tar` command below
 does just that.
 
-    tar -xzf senna-v3.0.tgz -C foreign/
+```bash
+tar -xzf senna-v3.0.tgz -C foreign/
+```
 
 Then run
 
-    cabal configure
-    cabal build
+```bash
+stack setup
+stack build
+```
 
 to build hase. You can run the example program by executing
 
-    cabal run example
-
-Finally, if you want to install this package, run
-
-    cabal install
+```bash
+stack exec example
+```
 
 ### Usage
 
