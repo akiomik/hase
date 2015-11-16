@@ -82,18 +82,28 @@ senna_new (const char *path)
 void
 senna_free (senna_t * ctx)
 {
+  printf("-- senna_free begin --\n");
+
   if (ctx == NULL)
     return;
 
   SENNA_Tokenizer_free (ctx->tokenizer);
 
+  printf("-- senna_free caps_hash --\n");
   SENNA_Hash_free (ctx->caps_hash);
+  printf("-- senna_free gazt_hash --\n");
   SENNA_Hash_free (ctx->gazt_hash);
+  printf("-- senna_free suff_hash --\n");
   SENNA_Hash_free (ctx->suff_hash);
+  printf("-- senna_free word_hash --\n");
   SENNA_Hash_free (ctx->word_hash);
+  printf("-- senna_free gazl_hash --\n");
   SENNA_Hash_free (ctx->gazl_hash);
+  printf("-- senna_free gazm_hash --\n");
   SENNA_Hash_free (ctx->gazm_hash);
+  printf("-- senna_free gazo_hash --\n");
   SENNA_Hash_free (ctx->gazo_hash);
+  printf("-- senna_free gazp_hash --\n");
   SENNA_Hash_free (ctx->gazp_hash);
 
   SENNA_POS_free (ctx->pos);
@@ -105,6 +115,8 @@ senna_free (senna_t * ctx)
   SENNA_PSG_free (ctx->psg);
 
   free (ctx);
+
+  printf("-- senna_free end --\n");
 }
 
 void
